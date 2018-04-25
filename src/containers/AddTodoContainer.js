@@ -7,9 +7,13 @@ import { addTodo } from '../actions'
 import AddTodo from '../components/AddTodo'
 
 class AddTodoContainer extends Component {
-  handleAddTodoClick = (value) => {
+  handleAddTodoClick = (event) => {
     const { dispatch } = this.props
-    dispatch(addTodo(value))
+    event.preventDefault()
+
+    const todoName = event.target.elements.todo.value
+
+    dispatch(addTodo(todoName))
   }
 
   render () {
