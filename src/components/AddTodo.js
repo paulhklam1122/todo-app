@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { addTodo } from '../actions'
 
-const AddTodo = ({ dispatch }) => {
+const AddTodo = ({ onAddTodoClick }) => {
   let input
 
   return (
@@ -14,10 +12,7 @@ const AddTodo = ({ dispatch }) => {
         }}
       />
       <button
-        onClick={() => {
-          dispatch(addTodo(input.value))
-          input.value = ''
-        }}
+        onClick={() => onAddTodoClick(input.value)}
       >
         Add Todo
       </button>
@@ -25,7 +20,7 @@ const AddTodo = ({ dispatch }) => {
   )
 }
 AddTodo.propTypes = {
-  dispatch: PropTypes.func.isRequired
+  onAddTodoClick: PropTypes.func.isRequired
 }
 
-export default connect()(AddTodo)
+export default AddTodo
