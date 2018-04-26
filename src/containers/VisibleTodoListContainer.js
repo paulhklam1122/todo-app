@@ -74,8 +74,6 @@ const mapStateToProps = (state, { match: { params } }) => {
     filter = params.filter
   }
 
-  console.log(getVisibleTodos(state, filter))
-
   return {
     todos: getVisibleTodos(state, filter),
     isFetching: getIsFetching(state, filter),

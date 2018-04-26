@@ -9,6 +9,7 @@ import AddTodo from '../components/AddTodo'
 class AddTodoContainer extends Component {
   handleAddTodoClick = (event) => {
     const { dispatch } = this.props
+    console.log('handling todo click')
     event.preventDefault()
 
     const todoName = event.target.elements.todo.value
