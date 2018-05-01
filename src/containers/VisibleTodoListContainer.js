@@ -65,14 +65,7 @@ VisibleTodoListContainer.defaultProps = {
 }
 
 const mapStateToProps = (state, { match: { params } }) => {
-  let filter = ''
-  if (!params.filter === undefined) {
-    filter = 'all'
-  } else if (params.filter !== 'all' && params.filter !== 'active' && params.filter !== 'completed') {
-    filter = 'all'
-  } else {
-    filter = params.filter
-  }
+  let filter = params.filter || 'all'
 
   return {
     todos: getVisibleTodos(state, filter),
