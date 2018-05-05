@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Checkbox from 'material-ui/Checkbox'
 import { ListItem, ListItemText } from 'material-ui/List'
 
-const Todo = ({ classes, onClick, completed, text }) => (
+const Todo = ({ onClick, completed, text }) => (
   <ListItem>
     <Checkbox
       onChange={onClick}
@@ -15,7 +15,6 @@ const Todo = ({ classes, onClick, completed, text }) => (
 )
 
 Todo.propTypes = {
-  classes: PropTypes.object.isRequired,
   onClick: PropTypes.func.isRequired,
   completed: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired
